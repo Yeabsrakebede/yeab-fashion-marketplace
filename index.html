@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="YEAB Fashion Marketplace — discover clothing made by Ethiopian designers.">
+  <title>YEAB Fashion Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="YEAB Fashion Marketplace home">
+      <span class="brand-mark">Y</span><span>YEAB <small>FASHION MARKETPLACE</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    <nav id="mainNav">
+      <a href="#shop">Shop</a><a href="#designers">Designers</a><a href="#how">How it works</a>
+      <a class="nav-cta" href="#join">Sell your designs</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MADE IN ETHIOPIA · WORN EVERYWHERE</p>
+        <h1>Wear the work<br>of Ethiopian hands.</h1>
+        <p class="hero-text">Discover original clothing and handmade style from independent Ethiopian designers and makers.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#shop">Explore designs</a><a class="text-link" href="#join">I'm a designer ↗</a></div>
+        <div class="hero-note"><span class="dot"></span> Supporting local creativity, one design at a time.</div>
+      </div>
+      <div class="hero-art" role="img" aria-label="Fashion editorial collage">
+        <div class="art-label">LOCAL CREATIVITY<br><b>GLOBAL STYLE</b></div>
+        <div class="art-circle"></div>
+        <div class="art-card art-card-one"><span>ETHIOPIAN</span><b>CRAFT</b></div>
+        <div class="art-card art-card-two"><span>NEW WAYS TO</span><b>WEAR</b></div>
+        <div class="art-caption">DESIGNED WITH PURPOSE — YEAB</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><b>Independent designers</b><span>Discover new makers</span></div>
+      <div><b>One-of-a-kind style</b><span>Find something different</span></div>
+      <div><b>Made closer to home</b><span>Support local talent</span></div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE MARKETPLACE</p><h2>Find your next favorite.</h2></div>
+        <p>Browse the collection and discover the people behind each piece.</p>
+      </div>
+      <div class="shop-controls">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search clothing or designer…" aria-label="Search products"></label>
+        <select id="categoryFilter" aria-label="Filter by category">
+          <option value="all">All categories</option><option>Women's fashion</option><option>Men's fashion</option>
+          <option>Children's clothing</option><option>Traditional Ethiopian</option><option>Accessories</option>
+        </select>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="demo-note" id="demoNote">Sample designs are shown for preview. Replace them with real designer listings before opening for sales.</p>
+    </section>
+
+    <section class="designer-section" id="designers">
+      <div class="designer-intro"><p class="eyebrow">THE PEOPLE BEHIND THE PIECES</p><h2>Good design deserves<br>to be discovered.</h2><p>YEAB is being built to help Ethiopian clothing makers showcase their work and reach more customers.</p><a href="#join" class="button button-light">Become a designer</a></div>
+      <div class="designer-list">
+        <div class="designer-row"><span class="designer-number">01</span><div><b>Independent makers</b><p>Share your own clothing and handmade creations.</p></div><span class="arrow">↗</span></div>
+        <div class="designer-row"><span class="designer-number">02</span><div><b>Your own designer profile</b><p>Introduce your style, location, and story.</p></div><span class="arrow">↗</span></div>
+        <div class="designer-row"><span class="designer-number">03</span><div><b>More ways to get discovered</b><p>Help shoppers find designs they love.</p></div><span class="arrow">↗</span></div>
+      </div>
+    </section>
+
+    <section class="steps section" id="how">
+      <p class="eyebrow">SIMPLE BY DESIGN</p><h2>A marketplace built around makers.</h2>
+      <div class="steps-grid">
+        <article><span>01</span><h3>Discover</h3><p>Browse styles, categories, and designer profiles.</p></article>
+        <article><span>02</span><h3>Connect</h3><p>Contact the maker to confirm sizes, price, and delivery.</p></article>
+        <article><span>03</span><h3>Order</h3><p>Agree on the order directly while the marketplace is in its early stage.</p></article>
+      </div>
+    </section>
+
+    <section class="join-section" id="join">
+      <div><p class="eyebrow">FOR ETHIOPIAN DESIGNERS</p><h2>Your designs belong<br>in the spotlight.</h2><p>Interested in joining the marketplace? Tell YEAB about your work.</p></div>
+      <div class="join-card"><label for="designerName">Your name</label><input id="designerName" placeholder="Designer or brand name"><label for="designerContact">Contact (Telegram, phone, or email)</label><input id="designerContact" placeholder="How customers can reach you"><label for="designerType">What do you make?</label><select id="designerType"><option>Women's fashion</option><option>Men's fashion</option><option>Children's clothing</option><option>Traditional Ethiopian clothing</option><option>Accessories</option></select><button id="joinButton" class="button button-dark full-width">Prepare my application</button><p class="form-help">This demo prepares a message for you to send; it does not store applications.</p></div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">Y</span><span>YEAB <small>FASHION MARKETPLACE</small></span></a><p>Celebrating Ethiopian fashion and independent makers.</p><span>© <span id="year"></span> YEAB Fashion Marketplace</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
