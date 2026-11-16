@@ -8,36 +8,96 @@ const products = [
   {name:"Traditional Kids Outfit", designer:"Sample designer profile", category:"Children's clothing", price:1100, colors:["#d1b45f","#eee0bd"], tag:"SAMPLE"},
   {name:"Tailored Casual Shirt", designer:"Sample designer profile", category:"Men's fashion", price:1150, colors:["#7c8b91","#d7d9d4"], tag:"SAMPLE"}
 ];
+
 const grid = document.getElementById("productGrid");
 const search = document.getElementById("searchInput");
 const filter = document.getElementById("categoryFilter");
-function renderProducts(){
+
+function renderProducts() {
   const q = search.value.trim().toLowerCase();
   const cat = filter.value;
-  const matches = products.filter(p => (cat === "all" || p.category === cat) && `${p.name} ${p.designer} ${p.category}`.toLowerCase().includes(q));
+
+  const matches = products.filter(p =>
+    (cat === "all" || p.category === cat) &&
+    ${p.name} ${p.designer} ${p.category}.toLowerCase().includes(q)
+  );
+
   grid.innerHTML = "";
-  if(!matches.length){grid.innerHTML='<div class="empty-state">No designs found. Try another search or category.</div>';return;}
-  matches.forEach((p,i)=>{
-    const card=document.createElement("article");card.className="product-card";
-    const art=document.createElement("div");art.className="product-art";art.style.setProperty("--fabric",p.colors[0]);
-    art.innerHTML='<span class="sample-tag">SAMPLE DESIGN</span>';
-    const info=document.createElement("div");info.className="product-info";
-    info.innerHTML=`<div class="product-category">${p.category}</div><h3>${p.name}</h3><p>By ${p.designer}</p><div class="product-price">${p.price.toLocaleString("en-US")} ETB</div>`;
-    card.append(art,info);grid.append(card);
+
+  if (!matches.length) {
+    grid.innerHTML = '<div class="empty-state">No designs found. Try another search or category.</div>';
+    return;
+  }
+
+  matches.forEach(p => {
+    const card = document.createElement("article");
+    card.className = "product-card";
+
+    const art = document.createElement("div");
+    art.className = "product-art";
+    art.style.setProperty("--fabric", p.colors[0]);
+    art.innerHTML = '<span class="sample-tag">SAMPLE DESIGN</span>';
+
+    const info = document.createElement("div");
+    info.className = "product-info";
+
+    info.innerHTML = 
+      <div class="product-category">${p.category}</div>
+      <h3>${p.name}</h3>
+      <p>By ${p.designer}</p>
+      <div class="product-price">${p.price.toLocaleString("en-US")} ETB</div>
+    ;
+
+    card.append(art, info);
+    grid.append(card);
   });
 }
-search.addEventListener("input",renderProducts);filter.addEventListener("change",renderProducts);
-document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("menuToggle").addEventListener("click",()=>document.getElementById("mainNav").classList.toggle("open"));
-document.querySelectorAll("#mainNav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("mainNav").classList.remove("open")));
-document.getElementById("joinButton").addEventListener("click",()=>{
-  const name=document.getElementById("designerName").value.trim();
-  const contact=document.getElementById("designerContact").value.trim();
-  const type=document.getElementById("designerType").value;
-  if(!name||!contact){alert("Please enter your name and contact details first.");return;}
-  const body=`Hello YEAB Fashion Marketplace! I would like to apply as a designer.\\nName/brand: ${name}\\nContact: ${contact}\\nCategory: ${type}\\nPlease tell me how to join.`;
-  const blob=new Blob([body],{type:"text/plain;charset=utf-8"});
-  const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="yeab-designer-application.txt";a.click();URL.revokeObjectURL(url);
-  alert("Your application message was downloaded. Send it to your marketplace contact. This demo does not submit or store applications online.");
+
+search.addEventListener("input", renderProducts);
+filter.addEventListener("change", renderProducts);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("menuToggle").addEventListener("click", () => {
+  document.getElementById("mainNav").classList.toggle("open");
 });
+
+document.querySelectorAll("#mainNav a").forEach(a => {
+  a.addEventListener("click", () => {
+    document.getElementById("mainNav").classList.remove("open");
+  });
+});
+
+document.getElementById("joinButton").addEventListener("click", () => {
+  const name = document.getElementById("designerName").value.trim();
+  const contact = document.getElementById("designerContact").value.trim();
+  const type = document.getElementById("designerType").value;
+
+  if (!name || !contact) {
+    alert("Please enter your name and contact details first.");
+    return;
+  }
+
+  const body = Hello YEAB Fashion Marketplace!
+I would like to apply as a designer.
+
+Name/brand: ${name}
+Contact: ${contact}
+Category: ${type}
+
+Please tell me how to join.;
+
+  const blob = new Blob([body], {type: "text/plain;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+
+  a.href = url;
+  a.download = "yeab-designer-application.txt";
+  a.click();
+
+  URL.revokeObjectURL(url);
+
+  alert("Your application message was downloaded.");
+});
+
 renderProducts();
