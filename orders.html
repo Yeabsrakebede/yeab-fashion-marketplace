@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YEAB | Customer Orders</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f5f2;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px #ddd;
+}
+h1 {
+  text-align: center;
+  color: #9b5369;
+}
+.subtitle {
+  text-align: center;
+  color: #777;
+}
+label {
+  display: block;
+  margin-top: 18px;
+  font-weight: bold;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 7px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+}
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 22px;
+  background: #9b5369;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.notice {
+  background: #f8edf1;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>YEAB FASHION MARKETPLACE</h1>
+<p class="subtitle">Order from Ethiopian Fashion Designers</p>
+
+<h3>Customer Order</h3>
+
+<form id="orderForm">
+
+<label>Customer Name</label>
+<input type="text" required>
+
+<label>Phone Number</label>
+<input type="tel" required>
+
+<label>Designer Name</label>
+<input type="text" required>
+
+<label>Product Name</label>
+<input type="text" required>
+
+<label>Agreed Price (ETB)</label>
+<input type="number" min="1" required>
+
+<label>Size / Customization Details</label>
+<textarea rows="3"></textarea>
+
+<label>Delivery Address</label>
+<textarea rows="3" required></textarea>
+
+<label>Select Payment Method</label>
+<select required>
+<option value="">Choose Bank</option>
+<option>Bank of Abyssinia</option>
+<option>Commercial Bank of Ethiopia</option>
+<option>Awash Bank</option>
+<option>Telebirr</option>
+</select>
+
+<label>Payment Receipt</label>
+<input type="file" accept="image/*,.pdf" required>
+
+<div class="notice">
+<strong>YEAB Payment Protection</strong>
+<p>Customers pay 100% before the order begins.</p>
+<p>YEAB verifies payment and manages the order.</p>
+<p>Designer receives 90% after customer confirms delivery.</p>
+<p>YEAB commission: 10%.</p>
+</div>
+
+<button type="submit">Submit Order</button>
+
+</form>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("message").textContent =
+  "Demo page only. Payment and order submission are not connected yet.";
+});
+</script>
+
+</body>
+</html>
